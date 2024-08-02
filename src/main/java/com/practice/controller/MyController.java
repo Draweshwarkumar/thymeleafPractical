@@ -38,6 +38,22 @@ public class MyController {
     	
     	return "Iterate";
     }
+    
+//    handler for conditional statements
+    
+    @GetMapping("/condition")
+    public String conditionalHandler(Model m) {
+    	m.addAttribute("isActive",true);
+    	m.addAttribute("Gender", "M");
+    	
+    List<Integer> list = List.of(5);
+    m.addAttribute("mylist", list);
+    	return "condition";
+    }
+    @GetMapping("/service")
+    public String serviceHandler(Model m) {
+    	return "service";
+    }
 }
 
 
