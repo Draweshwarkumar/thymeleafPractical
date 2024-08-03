@@ -52,6 +52,8 @@ public class MyController {
     }
     @GetMapping("/service")
     public String serviceHandler(Model m) {
+    	m.addAttribute("title","I like to do gym");
+    	m.addAttribute("subtitle","it helps to improve you mentally");
     	return "service";
     }
 }
