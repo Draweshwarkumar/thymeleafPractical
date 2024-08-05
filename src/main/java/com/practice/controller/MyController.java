@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MyController {
@@ -28,36 +29,43 @@ public class MyController {
 
         return "about";
     }
-    
+
     @GetMapping("/example-loop")
     public String iterateHandler(Model m) {
-    	
-    	List<String> names = List.of("shivam","ritik","rishav","pankaj");
-    	
-    	m.addAttribute("names",names);
-    	
-    	return "Iterate";
+
+        List<String> names = List.of("shivam", "ritik", "rishav", "pankaj");
+
+        m.addAttribute("names", names);
+
+        return "Iterate";
     }
-    
-//    handler for conditional statements
-    
+
+    // handler for conditional statements
+
     @GetMapping("/condition")
     public String conditionalHandler(Model m) {
-    	m.addAttribute("isActive",true);
-    	m.addAttribute("Gender", "M");
-    	
-    List<Integer> list = List.of(5);
-    m.addAttribute("mylist", list);
-    	return "condition";
+        m.addAttribute("isActive", true);
+        m.addAttribute("Gender", "M");
+
+        List<Integer> list = List.of(5);
+        m.addAttribute("mylist", list);
+        return "condition";
     }
+
     @GetMapping("/service")
     public String serviceHandler(Model m) {
-    	m.addAttribute("title","I like to do gym");
-    	m.addAttribute("subtitle","it helps to improve you mentally");
-    	return "service";
+        m.addAttribute("title", "I like to do gym");
+        m.addAttribute("subtitle", "it helps to improve you mentally");
+        return "service";
+    }
+
+    @GetMapping("/newabout")
+    public String newAbout() {
+        return "aboutnew";
+    }
+    
+    @GetMapping("/newcontact")
+    public String contacthandler() {
+    	return "contact";
     }
 }
-
-
-
- 
